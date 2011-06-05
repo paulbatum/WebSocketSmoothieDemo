@@ -5,6 +5,7 @@
     <script src="Scripts/jquery-1.6.1.js" type="text/javascript"></script>
     <script src="Scripts/smoothie.js" type="text/javascript"></script>
     <script src="Scripts/json2.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.slws.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -18,11 +19,16 @@
             smoothie.addTimeSeries(line1);
 
             smoothie.streamTo($('#chart').get(0));
-            connect();
+            
+            $.slws.ready(connect);
         });
 
         function connect() {
-            websocket = new WebSocket('ws://localhost:4502/monitoring');
+            if (window.WebSocket) {
+                websocket = new WebSocket('ws://localhost:4502/monitoring');
+            } else {
+                websocket = new WebSocketDraft('ws://localhost:4502/monitoring');
+            }
 
             websocket.onopen = function () {
                 $('body').append('Connected');
