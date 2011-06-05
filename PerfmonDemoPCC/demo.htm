@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.6.1.js" type="text/javascript"></script>
+    <script src="Scripts/smoothie.js" type="text/javascript"></script>
+    <script src="Scripts/json2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var smoothie = new SmoothieChart(
+            {
+                minValue: 0,
+                maxValue: 100
+            });
+
+            line1 = new TimeSeries();
+            smoothie.addTimeSeries(line1);
+
+            smoothie.streamTo($('#chart').get(0));
+            connect();
+        });
+
+        function connect() {
+            websocket = new WebSocket('ws://localhost:4502/monitoring');
+
+            websocket.onopen = function () {
+                $('body').append('Connected');
+            };
+
+            websocket.onmessage = function (event) {
+                message = JSON.parse(event.data);
+                line1.append(new Date(message.time).getTime(), message.value);
+            };
+        }
+    </script>
+</head>
+<body>
+    <canvas id="chart" height="100" width="400"></canvas>
+</body>
+</html>
