@@ -34,6 +34,10 @@
                 $('body').append('Connected');
             };
 
+            websocket.onclose = function () {
+                $('body').append('Closed');
+            };
+
             websocket.onmessage = function (event) {
                 message = JSON.parse(event.data);
                 line1.append(new Date(message.time).getTime(), message.value);

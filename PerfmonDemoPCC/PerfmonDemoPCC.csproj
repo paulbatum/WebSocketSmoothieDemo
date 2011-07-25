@@ -68,7 +68,6 @@
   <ItemGroup>
     <Content Include="ClientBin\Microsoft.ServiceModel.WebSockets.xap" />
     <Content Include="demo.htm" />
-    <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.6.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.1.js" />
     <Content Include="Scripts\jquery-1.6.1.min.js" />
@@ -85,9 +84,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="MonitoringService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
