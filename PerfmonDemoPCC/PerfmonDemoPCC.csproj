@@ -37,14 +37,16 @@
     <Reference Include="Microsoft.Runtime.Serialization.Json">
       <HintPath>..\packages\JsonValue.0.3.0\lib\40\Microsoft.Runtime.Serialization.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ServiceModel.Tcp">
-      <HintPath>..\..\..\Program Files (x86)\Microsoft SDKs\WCF WebSockets\11.05.10\bin\Microsoft.ServiceModel.Tcp.dll</HintPath>
+    <Reference Include="Microsoft.ServiceModel.Tcp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\WCF WebSockets\11.06.22\bin\Microsoft.ServiceModel.Tcp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ServiceModel.Web.jQuery">
       <HintPath>..\packages\JsonValue.0.3.0\lib\40\Microsoft.ServiceModel.Web.jQuery.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ServiceModel.WebSockets">
-      <HintPath>..\..\..\Program Files (x86)\Microsoft SDKs\WCF WebSockets\11.05.10\bin\Microsoft.ServiceModel.WebSockets.dll</HintPath>
+    <Reference Include="Microsoft.ServiceModel.WebSockets, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\WCF WebSockets\11.06.22\bin\Microsoft.ServiceModel.WebSockets.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
